@@ -8,7 +8,7 @@ Install for Ubuntu:
 
 https://docs.docker.com/engine/install/ubuntu/
 
-#### YKSI KOMENTO
+#### YKSI KOMENTO (x86_64 / amd64)
 
 ```bash
 sudo apt-get update && \
