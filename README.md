@@ -31,7 +31,7 @@ sudo usermod -aG docker $USER
 
 ---
 
-#### PERUS
+#### PERUS STEP BY STEP
 
 ```bash
 sudo apt-get update
