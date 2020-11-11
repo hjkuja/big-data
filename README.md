@@ -80,7 +80,7 @@ sudo firewall-cmd --zone=public --remove-port=PORT/tcp
 
 Install for Ubuntu:
 
-https://docs.docker.com/engine/install/ubuntu/
+[https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
 
 #### ONE COMMAND (x86_64 / amd64)
 
