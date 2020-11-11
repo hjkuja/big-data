@@ -34,13 +34,27 @@ List firewall info:
 sudo firewall-cmd --list-all
 ```
 
+Commit runtime changes to permanent firewall config:
+
+```bash
+sudo firewall-cmd --runtime-to-permanent
+```
+
+##### Services
+
 Add service to firewall **permanently** (--permanent can be excluded to remove the rule at reboot):
 
 ```bash
 sudo firewall-cmd --zone=YOUR_ZONE --add-service=YOUR_SERVICE --permanent
 ```
 
----
+Remove service:
+
+```bash
+sudo firewall-cmd --zone=YOUR_ZONE --remove-service=YOUR_SERVICE
+```
+
+##### Ports
 
 List ports:
 
@@ -51,13 +65,13 @@ sudo firewall-cmd --zone=public --list-ports
 Add port to firewall (Adds permanently. Protocol can be tcp or udp):
 
 ```bash
-sudo firewall-cmd --zone=public --add-port=5000/tcp
+sudo firewall-cmd --zone=public --add-port=PORT/tcp
 ```
 
-Commit runtime changes to permanent firewall config:
+Remove port:
 
 ```bash
-sudo firewall-cmd --runtime-to-permanent
+sudo firewall-cmd --zone=public --remove-port=PORT/tcp
 ```
 
 ---
