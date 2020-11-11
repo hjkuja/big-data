@@ -1,6 +1,66 @@
 # big-data
 
-## Komentoja ja linkkejä
+## Contents
+
+1. [Centos 8](#centos-8)
+1. [Docker](#docker)
+
+## Commands
+
+<!-- EMPTY BASE -->
+<!-- ```bash
+
+``` -->
+
+### Centos 8
+
+#### Firewall operations
+
+Default zone:
+
+```bash
+sudo firewall-cmd --get-default-zone
+```
+
+Get current active zones and their interfaces:
+
+```bash
+sudo firewall-cmd --get-active-zones
+```
+
+List firewall info:
+
+```bash
+sudo firewall-cmd --list-all
+```
+
+Add service to firewall **permanently** (--permanent can be excluded to remove the rule at reboot):
+
+```bash
+sudo firewall-cmd --zone=YOUR_ZONE --add-service=YOUR_SERVICE --permanent
+```
+
+---
+
+List ports:
+
+```bash
+sudo firewall-cmd --zone=public --list-ports
+```
+
+Add port to firewall (Adds permanently. Protocol can be tcp or udp):
+
+```bash
+sudo firewall-cmd --zone=public --add-port=5000/tcp
+```
+
+Commit runtime changes to permanent firewall config:
+
+```bash
+sudo firewall-cmd --runtime-to-permanent
+```
+
+---
 
 ### DOCKER
 
@@ -8,7 +68,7 @@ Install for Ubuntu:
 
 https://docs.docker.com/engine/install/ubuntu/
 
-#### YKSI KOMENTO (x86_64 / amd64)
+#### ONE COMMAND (x86_64 / amd64)
 
 ```bash
 sudo apt-get update && \
@@ -31,7 +91,7 @@ sudo usermod -aG docker $USER
 
 ---
 
-#### PERUS STEP BY STEP
+#### Default STEP BY STEP
 
 ```bash
 sudo apt-get update
