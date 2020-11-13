@@ -5,16 +5,42 @@
 1. [Centos 8](#centos-8)
 1. [Docker](#docker)
 
-## Commands
-
 <!-- EMPTY BASE -->
 <!-- ```bash
 
 ``` -->
 
-### Centos 8
+## Centos 8
 
-#### Firewall operations
+### Install SSH
+
+Install:
+
+```bash
+sudo dnf install openssh-server
+```
+
+Start & enable:
+
+```bash
+sudo systemctl start sshd && sudo systemctl enable sshd
+```
+
+Check status:
+
+```bash
+sudo systemctl status sshd
+```
+
+**Remember to add [ssh service](#services)**
+
+Edit config file:
+
+```bash
+sudo nano /etc/sshd/sshd_config
+```
+
+### Firewall operations
 
 Default zone:
 
@@ -34,13 +60,19 @@ List firewall info:
 sudo firewall-cmd --list-all
 ```
 
+Reload firewall:
+
+```bash
+sudo firewall-cmd --reload
+```
+
 Commit runtime changes to permanent firewall config:
 
 ```bash
 sudo firewall-cmd --runtime-to-permanent
 ```
 
-##### Services
+#### Services
 
 Add service to firewall **permanently** (--permanent can be excluded to remove the rule at reboot):
 
@@ -54,7 +86,7 @@ Remove service:
 sudo firewall-cmd --zone=YOUR_ZONE --remove-service=YOUR_SERVICE
 ```
 
-##### Ports
+#### Ports
 
 List ports:
 
@@ -76,13 +108,23 @@ sudo firewall-cmd --zone=public --remove-port=PORT/tcp
 
 ---
 
-### DOCKER
+## Docker for Ubuntu
 
 Install for Ubuntu:
 
 [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
 
-#### ONE COMMAND (x86_64 / amd64)
+### ONE COMMAND (x86_64 / amd64)
+
+(Not guaranteed to work! Check the [Docker official documentation](https://docs.docker.com/engine/install/ubuntu/) for the latest info.)
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh && \
+sudo sh get-docker.sh && \
+sudo usermod -aG docker {user}
+```
+
+OR
 
 ```bash
 sudo apt-get update && \
@@ -105,7 +147,7 @@ sudo usermod -aG docker $USER
 
 ---
 
-#### Default STEP BY STEP
+### Default STEP BY STEP
 
 ```bash
 sudo apt-get update
@@ -124,7 +166,7 @@ sudo apt-get install \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-#### x86_64 / amd64
+### x86_64 / amd64
 
 ```bash
 sudo add-apt-repository \
@@ -147,10 +189,28 @@ TEST:
 sudo docker run hello-world
 ```
 
-Käyttäjän group:
+User group:
 
 ```bash
 sudo usermod -aG docker {user}
+```
+
+---
+
+## Docker for CentOS
+
+Install for CentOS:
+
+[https://docs.docker.com/engine/install/centos/](https://docs.docker.com/engine/install/centos/)
+
+### ONE COMMAND
+
+(Not guaranteed to work! Check the [Docker official documentation](https://docs.docker.com/engine/install/centos/) for the latest info.)
+
+```bash
+curl -fsSL https://get.docker.com -o get-docker.sh && \
+sudo sh get-docker.sh && \
+sudo usermod -aG $USER
 ```
 
 ---
