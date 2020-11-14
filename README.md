@@ -121,7 +121,7 @@ Install for Ubuntu:
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh && \
 sudo sh get-docker.sh && \
-sudo usermod -aG docker {user}
+sudo usermod -aG docker $USER
 ```
 
 OR
