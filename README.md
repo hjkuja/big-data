@@ -108,13 +108,15 @@ sudo firewall-cmd --zone=public --remove-port=PORT/tcp
 
 ---
 
-## Docker for Ubuntu
+## Docker
+
+### Docker for Ubuntu
 
 Install for Ubuntu:
 
 [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
 
-### ONE COMMAND (x86_64 / amd64)
+#### ONE COMMAND (x86_64 / amd64)
 
 (Not guaranteed to work! Check the [Docker official documentation](https://docs.docker.com/engine/install/ubuntu/) for the latest info.)
 
@@ -147,7 +149,7 @@ sudo usermod -aG docker $USER
 
 ---
 
-### Default STEP BY STEP
+#### Default STEP BY STEP
 
 ```bash
 sudo apt-get update
@@ -166,7 +168,7 @@ sudo apt-get install \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-### x86_64 / amd64
+#### x86_64 / amd64
 
 ```bash
 sudo add-apt-repository \
@@ -197,13 +199,13 @@ sudo usermod -aG docker {user}
 
 ---
 
-## Docker for CentOS
+### Docker for CentOS
 
 Install for CentOS:
 
 [https://docs.docker.com/engine/install/centos/](https://docs.docker.com/engine/install/centos/)
 
-### ONE COMMAND
+#### ONE COMMAND
 
 (Not guaranteed to work! Check the [Docker official documentation](https://docs.docker.com/engine/install/centos/) for the latest info.)
 
