@@ -7,7 +7,6 @@
 
 <!-- EMPTY BASE -->
 <!-- ```bash
-
 ``` -->
 
 ## Centos 8
